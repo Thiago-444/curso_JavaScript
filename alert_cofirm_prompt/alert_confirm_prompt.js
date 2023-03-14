@@ -1,35 +1,28 @@
-const quer_somar = confirm('Quer somar dois numeros? aperte ok, ou cancele')
-
-if (!quer_somar) alert('continue para a pagina')
-else {
-    const valor_1 = prompt('digite um numero');
-
-    if (isNaN(valor_1)) {
-        const tentar_nov = confirm('nao é um numero valido, quer tentar novamente?') //erro se o user nao digitar um numero
-
-        if (!tentar_nov) alert('continue para a pagina') // se o user nao quiser continuar a soma, encerra aqui
-    } else {
-        const valor_2 = prompt('digite um numero');
-
-        if (isNaN(valor_2)) {
-            const tentar_nov_2 = confirm('nao é um numero valido, quer tentar novamente?') //erro se o user nao digitar um numero no valor_2
-            if (!tentar_nov_2) {
-                alert('continue para a pagina')
-            } else {
-                const soma_valores = parseFloat(valor_1) + parseFloat(valor_2)
-                alert(soma_valores)
-            }
-
-        } else {
-            const soma_valores = parseFloat(valor_1) + parseFloat(valor_2)
-            alert(soma_valores)
-        }
-
-
-    }
-
-
+function quer_somar() {
+    const result_quer_soma = confirm('Quer somar dois numeros? aperte ok, ou cancele')
+    return result_quer_soma
 }
 
+const valor_1 = () => prompt('digite um numero')
+const valor_2 = () => prompt('digite um numero')
 
+function tentar_nov_1() {
+    const tentar_1 = confirm('voce só pode digitar numeros, quer tentar novamente?')
+    return tentar_1
+}
 
+function tentar_nov_2() {
+    const tentar_2 = confirm('voce só pode digitar numeros, quer tentar novamente?')
+    return tentar_2
+}
+
+const alert_nao_somar = () => alert('voce optou por nao somar e ser direcionado para a página')
+
+const soma = () => valor_1 + valor_2
+
+const fim_processo = () => alert('novamente voce não digitou numeros e a soma não pode ser feita e será direcionado para a página')
+
+if(!quer_somar()) alert_nao_somar()
+else{
+    
+}
